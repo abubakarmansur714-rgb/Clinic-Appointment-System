@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint Clinic | Appointment System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">✚</span> CarePoint Clinic</div>
+    <nav><a href="#book">Book</a><a href="#appointments">Appointments</a><a href="#about">About</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SMART CLINIC SERVICE</p>
+        <h1>Book your clinic appointment without the long queue.</h1>
+        <p class="hero-text">Choose a doctor, select an available time and keep your appointment details in one place.</p>
+        <a class="button" href="#book">Book an Appointment</a>
+      </div>
+      <div class="hero-card">
+        <div class="pulse">♥</div>
+        <h3>Simple. Fast. Organized.</h3>
+        <p>Digital appointment booking for patients and clinic staff.</p>
+      </div>
+    </section>
+
+    <section id="book" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">PATIENT PORTAL</p>
+        <h2>Book an appointment</h2>
+      </div>
+
+      <form id="bookingForm" class="card form-grid">
+        <label>Patient name<input name="patient_name" required placeholder="Enter full name"></label>
+        <label>Phone number<input name="phone" required placeholder="08012345678"></label>
+        <label>Email address<input type="email" name="email" required placeholder="patient@example.com"></label>
+        <label>Doctor
+          <select name="doctor" required>
+            <option value="">Select doctor</option>
+            <option>Dr. Amina Yusuf — General Medicine</option>
+            <option>Dr. Ibrahim Bello — General Medicine</option>
+            <option>Dr. Fatima Ali — Pediatrics</option>
+            <option>Dr. Musa Abdullahi — Dental Care</option>
+          </select>
+        </label>
+        <label>Appointment date<input type="date" name="appointment_date" id="date" required></label>
+        <label>Appointment time
+          <select name="appointment_time" required>
+            <option value="">Select time</option>
+            <option>09:00</option><option>10:00</option><option>11:00</option>
+            <option>12:00</option><option>13:00</option><option>14:00</option>
+            <option>15:00</option><option>16:00</option>
+          </select>
+        </label>
+        <label class="full">Reason for visit<textarea name="reason" required placeholder="Briefly describe the reason for your visit"></textarea></label>
+        <button class="button full" type="submit">Confirm Appointment</button>
+        <p id="message" class="message full"></p>
+      </form>
+    </section>
+
+    <section id="appointments" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">RECORDS</p>
+        <h2>Appointments</h2>
+      </div>
+      <div class="card table-wrap">
+        <table>
+          <thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id="appointmentList"><tr><td colspan="6">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div><p class="eyebrow">ABOUT THE PROJECT</p><h2>A practical solution to clinic queues.</h2></div>
+      <p>The system digitizes appointment booking so patients can reserve a time before visiting the clinic. It stores appointments in a SQLite database and prevents double-booking of the same doctor, date and time.</p>
+    </section>
+  </main>
+
+  <footer>CarePoint Clinic Appointment System · 3MTT Cohort 3 Kebbi · 2026</footer>
+  <script src="app.js"></script>
+</body>
+</html>
